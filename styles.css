@@ -117,18 +117,193 @@ section h2 {
 }
 
 .contact-section {
+    width: 100%;
     background-color: #1c1c1c; /* dark tone */
     color: white;
-    padding: 80px 20px;
-    text-align: center;
+    padding: 60px 5%;
+    text-align: left;
 }
+
 
 .contact-section h2 {
     font-size: 3rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .contact-section p {
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+/* Left column: emojis + info */
+.contact-labels p {
+    font-size: 1.2rem;
+    margin: 15px 0;
+}
+
+/* Right column: form */
+.contact-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-fields label {
+    font-size: 1rem;
+    margin-bottom: -5px;
+}
+
+.contact-fields input,
+.contact-fields textarea {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #2b2b2b;
+    color: white;
+    font-size: 1rem;
+}
+
+.contact-fields button {
+    width: 150px;
+    padding: 12px;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.contact-fields button:hover {
+    background: #ff4b4b;
+}
+
+.contact-info a {
+    color: #00a0dc;
+    text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.contact-footer {
+    width: 100%;
+    background: #121212; /* elegant dark */
+    color: white;
+    padding: 50px 6%;
+    text-align: left;
+    border-top: 2px solid #444; /* optional subtle line */
+    font-family: "Playfair Display", serif;
+}
+
+.contact-footer h2 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.contact-footer .subtitle {
     font-size: 1.2rem;
     margin-bottom: 30px;
+    opacity: 0.85;
+    font-family: "Inter", sans-serif;
+}
+
+/* 2-column layout */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+/* Left column info */
+.contact-labels p {
+    font-size: 1.2rem;
+    margin: 12px 0;
+    font-family: "Inter", sans-serif;
+}
+
+/* Right column form */
+.contact-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-family: "Inter", sans-serif;
+}
+
+/* Labels */
+.contact-fields label {
+    font-size: 1rem;
+}
+
+/* Inputs */
+.contact-fields input,
+.contact-fields textarea {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #222;
+    color: white;
+    font-size: 1rem;
+}
+
+/* Button */
+.contact-fields button {
+    width: 180px;
+    padding: 12px;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-fields button:hover {
+    background: #ff4b4b;
+}
+
+/* Links */
+.contact-footer a {
+    color: #00a0dc;
+    text-decoration: none;
+}
+
+.contact-footer a:hover {
+    text-decoration: underline;
+}
+
+/* No round edges ANYWHERE */
+* {
+    border-radius: 0 !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-footer h2 {
+        font-size: 2.2rem;
+    }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .contact-section h2 {
+        font-size: 2.2rem;
+    }
+    .contact-info p {
+        font-size: 1.1rem;
+    }
 }
