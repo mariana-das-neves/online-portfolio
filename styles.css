@@ -19,3 +19,30 @@
     background: #f2e6ff;                  /* hover color */
     transform: translateY(-2px);          /* subtle lift effect */
 }
+
+.nav-button {
+    flex: 1;
+    border: none;
+    background: #faf5ff;
+    font-size: 22px;
+    padding: 18px 0;
+    font-family: "Pacifico", cursive;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    transition: background 0.3s, transform 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-button:hover {
+    background: #f2e6ff;
+    transform: translateY(-2px);
+}
+
+html {
+    scroll-behavior: smooth;
+}
