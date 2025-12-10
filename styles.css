@@ -1,0 +1,21 @@
+.button-bar {
+    display: flex;
+    width: 100%;
+}
+
+.button-bar button {
+    flex: 1;
+    border: none;
+    background: #faf5ff;                  /* soft pastel background */
+    font-size: 22px;                      /* smaller text (no overlap) */
+    padding: 18px 0;
+    font-family: "Pacifico", cursive;     /* fancy handwriting */
+    letter-spacing: 1px;                  /* elegant spacing */
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.button-bar button:hover {
+    background: #f2e6ff;                  /* hover color */
+    transform: translateY(-2px);          /* subtle lift effect */
+}
