@@ -23,7 +23,7 @@
 .nav-button {
     flex: 1;
     border: none;
-    background: #faf5ff;
+    background: #faf5ff;                  /* same light pastel background */
     font-size: 22px;
     padding: 18px 0;
     font-family: "Pacifico", cursive;
@@ -31,7 +31,7 @@
     cursor: pointer;
     text-align: center;
     text-decoration: none;
-    color: black;
+    color: #4a2c6a;                       /* elegant violet text */
     transition: background 0.3s, transform 0.2s;
     display: flex;
     justify-content: center;
@@ -45,4 +45,24 @@
 
 html {
     scroll-behavior: smooth;
+}
+
+section {
+    max-width: 1000px;                  /* limit width so it doesn’t stretch edge-to-edge */
+    margin: 40px auto;                   /* center horizontally with space around */
+    padding: 60px 40px;                  /* inner spacing */
+    background: #faf5ff;                 /* same button color for unity */
+    border-radius: 20px;                 /* rounded “tab” look */
+    font-family: "Pacifico", cursive;    /* matching fancy font */
+    color: #4a2c6a;                      /* text color same as buttons */
+    font-size: 26px;                      /* readable but elegant */
+    letter-spacing: 1px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* subtle depth */
+}
+
+
+section h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-align: center;
 }
