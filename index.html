@@ -9,7 +9,7 @@
 
 </head>
 <body>
-
+ 
     <div class="container-fluid px-0">
         <div class="hero-section d-flex">
             <div class="hero-text text-start ps-5">
@@ -69,7 +69,7 @@
             <div class="contact-labels">
                 <p>📞 <strong>Phone:</strong> +351 91 613 57 58</p>
                 <p>✉️ <strong>Email:</strong> mariananeves.engfis@hotmail.com</p>
-                <p>🔗 <strong>LinkedIn:</strong> 
+                <p>🔗 <strong>LinkedIn:</strong>
                     <a href="https://www.linkedin.com/in/mariana-das-neves" target="_blank">
                         linkedin.com/in/mariana-das-neves
                     </a>
@@ -83,14 +83,24 @@
                 <label>Your Message:</label>
                 <textarea rows="4" placeholder="Type your message..."></textarea>
 
-                <button type="submit">Send Email</button>
+                <button type="submit" class="send-btn">Send Email</button>
             </div>
         </div>
+
     </section>
 
+    <button id="backToTop">⬆</button>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const btn = document.getElementById("backToTop");
+            btn.addEventListener("click", function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
 
-
-</body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+
 </html>
