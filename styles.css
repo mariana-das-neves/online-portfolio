@@ -378,3 +378,95 @@ section h2 {
         font-size: 1rem;
     }
 }
+
+#projects {
+    margin-top: 40px;
+}
+
+.project-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 30px;
+}
+
+.project-text {
+    width: 50%;
+}
+
+.project-name {
+    font-size: 1.3rem;   /* same font size as .company-name */
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.project-item .timeline {
+    font-size: 0.95rem;   /* same style as your timeline */
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.project-item .description {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.project-image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px; /* optional */
+}
+
+#sports {
+    margin-top: 40px;
+}
+
+.sport-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.sport-text {
+    width: 50%;
+}
+
+.sport-category {
+    font-size: 1.3rem; /* same as titles in other sections */
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.sport-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.sport-list li {
+    margin-bottom: 6px;
+    font-size: 1rem;
+}
+
+.sport-image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.sport-image img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
