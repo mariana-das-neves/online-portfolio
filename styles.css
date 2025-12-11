@@ -329,3 +329,51 @@ section h2 {
         height: 3rem;
     }
 }
+
+/* ——— DIGITAL SKILLS SECTION ——— */
+#digital-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* 3–4 column responsive grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 2rem;
+    align-items: center;
+    justify-items: center;
+}
+
+/* Individual skill item */
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.6rem;
+}
+
+/* Logo size */
+.skill-item img {
+    height: 4rem;       /* adjusts automatically on mobile */
+    width: auto;
+}
+
+/* Text under logo */
+.skill-item p {
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    .skill-item img {
+        height: 3.2rem;
+    }
+    .skill-item p {
+        font-size: 1rem;
+    }
+}
