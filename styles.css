@@ -1,259 +1,191 @@
+/* ——— BUTTON BAR WRAPPER ——— */
 .button-bar {
     display: flex;
     width: 100%;
+    gap: 0;              /* keeps the buttons touching */
 }
 
-.button-bar button {
+/* ——— BASE BUTTON STYLE (applies to both <button> and <a>) ——— */
+.button-bar button,
+.button-bar .nav-button {
     flex: 1;
     border: none;
-    background: #faf5ff;                  /* soft pastel background */
-    font-size: 22px;                      /* smaller text (no overlap) */
-    padding: 18px 0;
-    font-family: "Pacifico", cursive;     /* fancy handwriting */
-    letter-spacing: 1px;                  /* elegant spacing */
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-}
-
-.button-bar button:hover {
-    background: #f2e6ff;                  /* hover color */
-    transform: translateY(-2px);          /* subtle lift effect */
-}
-
-.nav-button {
-    flex: 1;
-    border: none;
-    background: #faf5ff;              /* keep soft pastel background */
-    font-size: 22px;
-    padding: 18px 0;
-    font-family: "Playfair Display", serif; /* fancier lettering */
-    letter-spacing: 1px;
+    background: #faf5ff;
+    font-size: 1.3rem;                  /* scales with device */
+    padding: 1rem 0;
+    letter-spacing: 0.05rem;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
-    color: #4a2c6a;                   /* elegant violet text */
+    color: #4a2c6a;
     transition: background 0.3s, transform 0.2s;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.nav-button:hover {
+/* ——— CUSTOM FONTS ——— */
+.button-bar button {
+    font-family: "Pacifico", cursive;
+}
+
+.button-bar .nav-button {
+    font-family: "Playfair Display", serif;
+}
+
+/* ——— HOVER EFFECT ——— */
+.button-bar button:hover,
+.button-bar .nav-button:hover {
     background: #f2e6ff;
-    transform: translateY(-2px);
+    transform: translateY(-0.15rem);
+}
+
+/* ——— MOBILE RESPONSIVENESS ——— */
+@media (max-width: 600px) {
+    .button-bar button,
+    .button-bar .nav-button {
+        font-size: 1.1rem;
+        padding: 0.8rem 0;
+    }
 }
 
 
+/* ——— GLOBAL SETTINGS ——— */
 html {
     scroll-behavior: smooth;
 }
 
+* {
+    border-radius: 0 !important;   /* sharp, no rounded corners anywhere */
+    box-sizing: border-box;
+}
+
+/* ——— UNIVERSAL SECTION STYLE ——— */
 section {
-    width: 100%;               /* full width */
-    max-width: 100%;
-    margin: 0;                 /* no extra spacing around sections */
-    padding: 60px 6%;          /* inner spacing */
-    font-family: "Inter", sans-serif; /* body text font */
-    color: #1c1c1c;            /* dark text */
-    background-color: #ffffff; /* white background */
-    border: 1px solid rgba(0,0,0,0.08); /* soft outline */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* subtle shadow for depth */
-    font-size: 1.3rem;         /* slightly bigger text */
+    width: 100%;
+    padding: 4rem 6%;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    color: #1c1c1c;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 0.3rem 1rem rgba(0,0,0,0.05);
+    font-size: 1.3rem;
 }
 
 section h2 {
-    font-family: "Playfair Display", serif; /* heading font */
-    font-size: 3rem;           /* bigger headings */
-    color: #1c1c1c;            /* dark heading text */
-    margin-bottom: 20px;
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
 }
 
-
-
+/* ——— HERO SECTION ——— */
 .hero-section {
     width: 100%;
-    height: 100vh; /* full viewport height */
-    background: url('Foto HerrChimesee Capa Website.jpeg') center center / cover no-repeat;
+    height: 100vh;
+    background: url("Foto HerrChimesee Capa Website.jpeg") center / cover no-repeat;
     color: white;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    text-shadow: 0.15rem 0.15rem 0.5rem rgba(0, 0, 0, 0.7);
     display: flex;
-    align-items: flex-start; /* top half */
+    align-items: flex-start;
 }
 
 .hero-text {
-    margin-top: 15vh; /* pushes text into top half */
+    margin-top: 15vh;
 }
 
 .hero-text h1 {
-    font-size: 6rem; /* big name */
+    font-size: 6rem;
     margin-bottom: 1rem;
 }
 
 .hero-text p {
-    font-size: 3rem; /* big subtitle */
+    font-size: 3rem;
 }
 
-/* Responsive adjustments for tablets and mobile */
+/* ——— HERO MOBILE ADJUSTMENTS ——— */
 @media (max-width: 768px) {
+    .hero-text {
+        margin-top: 10vh;
+        padding-left: 1rem;
+    }
     .hero-text h1 {
         font-size: 3.5rem;
     }
     .hero-text p {
         font-size: 2rem;
     }
-    .hero-text {
-        margin-top: 10vh;
-        padding-left: 20px; /* smaller padding on mobile */
-    }
 }
 
-.contact-section {
-    width: 100%;
-    background-color: #1c1c1c; /* dark tone */
-    color: white;
-    padding: 60px 5%;
-    text-align: left;
-}
-
-
-.contact-section h2 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-.contact-section p {
-    margin-bottom: 25px;
-    font-size: 1.2rem;
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
-
-/* Left column: emojis + info */
-.contact-labels p {
-    font-size: 1.2rem;
-    margin: 15px 0;
-}
-
-/* Right column: form */
-.contact-fields {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.contact-fields label {
-    font-size: 1rem;
-    margin-bottom: -5px;
-}
-
-.contact-fields input,
-.contact-fields textarea {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    background: #2b2b2b;
-    color: white;
-    font-size: 1rem;
-}
-
-.contact-fields button {
-    width: 150px;
-    padding: 12px;
-    background: #ff6b6b;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 1.1rem;
-}
-
-.contact-fields button:hover {
-    background: #ff4b4b;
-}
-
-.contact-info a {
-    color: #00a0dc;
-    text-decoration: none;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* SHORTER footer-style contact section */
+/* ——— CONTACT MAIN SECTION ——— */
+.contact-section,
 .contact-footer {
     width: 100%;
-    background: #121212;
     color: white;
-    padding: 25px 6%;      /* ↓ reduced from 50px to 25px */
-    text-align: left;
-    border-top: 2px solid #444;
-    font-family: "Playfair Display", serif;
-    margin: 0;             /* ensure no external margin */
+    background: #1c1c1c;
+    padding: 4rem 6%;
 }
 
+/* Headings */
+.contact-section h2,
 .contact-footer h2 {
-    font-size: 2.8rem;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    margin: 0 0 5px 0;
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
+/* Subtitle */
 .contact-footer .subtitle {
     font-size: 1.1rem;
-    margin-bottom: 18px;
     opacity: 0.85;
+    margin-bottom: 1.5rem;
     font-family: "Inter", sans-serif;
 }
 
-/* 2-column layout */
+/* GRID: Left labels + Right form */
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    gap: 2rem;
 }
 
-/* Left column info */
+/* Left informational column */
 .contact-labels p {
     font-size: 1.15rem;
-    margin: 8px 0;        /* ↓ reduced from 12px */
+    margin: 0.5rem 0;
 }
 
-/* Right column form */
-/* Form column spacing shortened */
+/* FORM styles */
 .contact-fields {
     display: flex;
     flex-direction: column;
-    gap: 8px;             /* ↓ reduced from 12px */
+    gap: 0.6rem;
 }
 
-/* Labels */
 .contact-fields label {
     font-size: 1rem;
 }
 
-/* Inputs */
 .contact-fields input,
 .contact-fields textarea {
-    padding: 10px;         /* slightly smaller fields */
+    width: 100%;
+    padding: 0.75rem;
+    background: #2b2b2b;
+    color: white;
+    border: none;
+    font-size: 1rem;
 }
 
-/* Button */
+/* Submit button */
 .contact-fields button {
-    width: 150px;
-    padding: 12px;
+    width: 10rem;
+    padding: 0.8rem;
     background: #ff6b6b;
     color: white;
     border: none;
-    font-size: 1.1rem;
     cursor: pointer;
-    transition: 0.3s;
+    font-size: 1.1rem;
+    transition: background 0.3s;
 }
 
 .contact-fields button:hover {
@@ -264,26 +196,14 @@ section h2 {
 .contact-footer a {
     color: #00a0dc;
     text-decoration: none;
+    transition: 0.2s;
 }
 
 .contact-footer a:hover {
     text-decoration: underline;
 }
 
-/* No round edges ANYWHERE */
-* {
-    border-radius: 0 !important;
-}
-
-#contacts, 
-#contacts .subtitle,
-#contacts .contact-labels,
-#contacts .contact-fields {
-    color: white;
-}
-
-
-/* Mobile adjustments */
+/* ——— MOBILE CONTACT LAYOUT ——— */
 @media (max-width: 768px) {
     .contact-grid {
         grid-template-columns: 1fr;
@@ -293,12 +213,13 @@ section h2 {
     }
 }
 
+/* ——— BACK TO TOP BUTTON ——— */
 #backToTop {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
+    bottom: 1.25rem;   /* 20px → rem for responsiveness */
+    right: 1.25rem;
+    width: 3.125rem;   /* 50px → rem */
+    height: 3.125rem;
     background-color: #ff6b6b;
     color: white;
     border: none;
@@ -306,32 +227,33 @@ section h2 {
     cursor: pointer;
     z-index: 99999;
     opacity: 0.85;
-    transition: 0.3s;
+    transition: background 0.3s, opacity 0.3s, transform 0.2s;
 }
 
 #backToTop:hover {
     opacity: 1;
     background-color: #ff4b4b;
+    transform: translateY(-0.1rem); /* subtle lift effect */
 }
 
+/* ——— STUDIES SECTION ——— */
 #studies {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5em;
-    }
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* consistent spacing using rem */
+}
 
 .study-item {
-        display: flex;
-        align-items: center;
-        gap: 1em;
-    }
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
 
-
-.logo {
-        height: 3.2em; /* adjust size if needed */
-        width: auto;
-        flex-shrink: 0;
-    }
+.study-item .logo {
+    height: 3.2rem; /* responsive logo size */
+    width: auto;
+    flex-shrink: 0;
+}
 
 .study-text {
     display: flex;
@@ -342,23 +264,25 @@ section h2 {
 
 .study-text .title {
     font-weight: bold;
-    margin-bottom: 0.2em;
+    margin-bottom: 0.2rem;
+    font-size: 1.2rem;
 }
 
+/* ——— WORK SECTION ——— */
 #work {
     display: flex;
     flex-direction: column;
-    gap: 2em;
+    gap: 2rem;
 }
 
 .work-item {
     display: flex;
     align-items: flex-start;
-    gap: 1.2em;
+    gap: 1rem;
 }
 
-.work-logo {
-    height: 4em;   /* change if you want larger logos */
+.work-item .work-logo {
+    height: 4rem;   /* slightly larger logo */
     width: auto;
     flex-shrink: 0;
 }
@@ -366,21 +290,42 @@ section h2 {
 .work-text {
     display: flex;
     flex-direction: column;
-    gap: 0.3em;
+    gap: 0.3rem;
     line-height: 1.45;
 }
 
 .company-name {
-    font-size: 1.25em;
+    font-size: 1.25rem;
     font-weight: bold;
 }
 
 .timeline {
     font-style: italic;
     color: #555;
-    margin-bottom: 0.4em;
+    margin-bottom: 0.4rem;
 }
 
 .description {
     margin: 0;
+}
+
+/* ——— RESPONSIVE ADJUSTMENTS ——— */
+@media (max-width: 768px) {
+    /* Stack Study items vertically on mobile if needed */
+    .study-item,
+    .work-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .study-text .title,
+    .company-name {
+        font-size: 1.1rem;
+    }
+
+    .study-item .logo,
+    .work-item .work-logo {
+        height: 3rem;
+    }
 }
