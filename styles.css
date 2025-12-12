@@ -1,506 +1,231 @@
-/* ——— BUTTON BAR WRAPPER ——— */
-.button-bar {
-    display: flex;
-    width: 100%;
-    gap: 0;              /* keeps the buttons touching */
+/* ---------- Layout wrapper (75% width until contacts) ---------- */
+.main-wrapper {
+  width: 75%;
+  margin: 0 auto;
 }
 
-/* ——— BASE BUTTON STYLE (applies to both <button> and <a>) ——— */
+/* On smaller screens, use a wider wrapper */
+@media (max-width: 900px) {
+  .main-wrapper { width: 95%; }
+}
+
+/* Contact section should remain full width (overrides) */
+.contact-footer {
+  width: 100% !important;
+  box-shadow: none;
+  background: #1c1c1c;
+  color: white;
+}
+
+/* ---------- Button bar ---------- */
+.button-bar {
+  display: flex;
+  width: 100%;
+  gap: 0;
+}
+
 .button-bar button,
 .button-bar .nav-button {
-    flex: 1;
-    border: none;
-    background: #faf5ff;
-    font-size: 1.3rem;                  /* scales with device */
-    padding: 1rem 0;
-    letter-spacing: 0.05rem;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    color: #4a2c6a;
-    transition: background 0.3s, transform 0.2s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  flex: 1;
+  border: none;
+  background: #faf5ff;
+  font-size: 1.1rem;
+  padding: 0.9rem 0;
+  letter-spacing: 0.03rem;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: #4a2c6a;
+  transition: background 0.25s, transform 0.15s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* ——— CUSTOM FONTS ——— */
-.button-bar button {
-    font-family: "Pacifico", cursive;
-}
+.button-bar .nav-button { font-family: "Playfair Display", serif; }
+.button-bar button { font-family: "Pacifico", cursive; }
 
-.button-bar .nav-button {
-    font-family: "Playfair Display", serif;
-}
-
-/* ——— HOVER EFFECT ——— */
 .button-bar button:hover,
 .button-bar .nav-button:hover {
-    background: #f2e6ff;
-    transform: translateY(-0.15rem);
+  background: #f2e6ff;
+  transform: translateY(-0.08rem);
 }
 
-/* ——— MOBILE RESPONSIVENESS ——— */
-@media (max-width: 600px) {
-    .button-bar button,
-    .button-bar .nav-button {
-        font-size: 1.1rem;
-        padding: 0.8rem 0;
-    }
-}
+/* ---------- Global ---------- */
+html { scroll-behavior: smooth; }
+* { box-sizing: border-box; }
 
+/* Use sharp corners as requested */
+* { border-radius: 0 !important; }
 
-/* ——— GLOBAL SETTINGS ——— */
-html {
-    scroll-behavior: smooth;
-}
-
-* {
-    border-radius: 0 !important;   /* sharp, no rounded corners anywhere */
-    box-sizing: border-box;
-}
-
-/* ——— UNIVERSAL SECTION STYLE ——— */
+/* Universal section styling */
 section {
-    width: 100%;
-    padding: 4rem 6%;
-    margin: 0;
-    font-family: "Inter", sans-serif;
-    color: #1c1c1c;
-    background: #ffffff;
-    border: 1px solid rgba(0,0,0,0.08);
-    box-shadow: 0 0.3rem 1rem rgba(0,0,0,0.05);
-    font-size: 1.3rem;
+  width: 100%;
+  padding: 3rem 6%;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: #1c1c1c;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 0.3rem 1rem rgba(0,0,0,0.04);
+  font-size: 1.05rem;
 }
 
 section h2 {
-    font-family: "Playfair Display", serif;
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
+  font-family: "Playfair Display", serif;
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
 }
 
-
-/* ——— HERO SECTION ——— */
+/* ---------- Hero ---------- */
 .hero-section {
-    width: 100%;
-    height: 100vh;
-    background: url("Foto HerrChimesee Capa Website.jpeg") center / cover no-repeat;
-    color: white;
-    text-shadow: 0.15rem 0.15rem 0.5rem rgba(0, 0, 0, 0.7);
-    display: flex;
-    align-items: flex-start;
+  width: 100%;
+  height: 60vh;
+  background: url("Foto HerrChimesee Capa Website.jpeg") center / cover no-repeat;
+  color: white;
+  text-shadow: 0.15rem 0.15rem 0.5rem rgba(0,0,0,0.7);
+  display: flex;
+  align-items: flex-start;
 }
 
 .hero-text {
-    margin-top: 15vh;
+  margin-top: 6vh;
+  padding-left: 2rem;
 }
 
-.hero-text h1 {
-    font-size: 6rem;
-    margin-bottom: 1rem;
-}
+.hero-text h1 { font-size: 3.5rem; margin-bottom: 0.5rem; }
+.hero-text p { font-size: 1.6rem; }
 
-.hero-text p {
-    font-size: 3rem;
-}
+/* ---------- Studies ---------- */
+.study-item { display:flex; align-items:center; gap:1rem; margin-bottom:1rem; }
+.study-item .logo { height:3.2rem; width:auto; flex-shrink:0; }
+.study-text { display:flex; flex-direction:column; justify-content:center; line-height:1.4; }
 
-/* ——— HERO MOBILE ADJUSTMENTS ——— */
-@media (max-width: 768px) {
-    .hero-text {
-        margin-top: 10vh;
-        padding-left: 1rem;
-    }
-    .hero-text h1 {
-        font-size: 3.5rem;
-    }
-    .hero-text p {
-        font-size: 2rem;
-    }
-}
-
-/* ——— CONTACT MAIN SECTION ——— */
-.contact-section,
-.contact-footer {
-    width: 100%;
-    color: white;
-    background: #1c1c1c;
-    padding: 4rem 6%;
-}
-
-/* Headings */
-.contact-section h2,
-.contact-footer h2 {
-    font-family: "Playfair Display", serif;
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-/* Subtitle */
-.contact-footer .subtitle {
-    font-size: 1.1rem;
-    opacity: 0.85;
-    margin-bottom: 1.5rem;
-    font-family: "Inter", sans-serif;
-}
-
-/* GRID: Left labels + Right form */
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-}
-
-/* Left informational column */
-.contact-labels p {
-    font-size: 1.15rem;
-    margin: 0.5rem 0;
-}
-
-/* FORM styles */
-.contact-fields {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-}
-
-.contact-fields label {
-    font-size: 1rem;
-}
-
-.contact-fields input,
-.contact-fields textarea {
-    width: 100%;
-    padding: 0.75rem;
-    background: #2b2b2b;
-    color: white;
-    border: none;
-    font-size: 1rem;
-}
-
-/* Submit button */
-.contact-fields button {
-    width: 10rem;
-    padding: 0.8rem;
-    background: #ff6b6b;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: background 0.3s;
-}
-
-.contact-fields button:hover {
-    background: #ff4b4b;
-}
-
-/* Links */
-.contact-footer a {
-    color: #00a0dc;
-    text-decoration: none;
-    transition: 0.2s;
-}
-
-.contact-footer a:hover {
-    text-decoration: underline;
-}
-
-/* ——— MOBILE CONTACT LAYOUT ——— */
-@media (max-width: 768px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-    .contact-footer h2 {
-        font-size: 2.2rem;
-    }
-}
-
-/* ——— BACK TO TOP BUTTON ——— */
-#backToTop {
-    position: fixed;
-    bottom: 1.25rem;   /* 20px → rem for responsiveness */
-    right: 1.25rem;
-    width: 3.125rem;   /* 50px → rem */
-    height: 3.125rem;
-    background-color: #ff6b6b;
-    color: white;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    z-index: 99999;
-    opacity: 0.85;
-    transition: background 0.3s, opacity 0.3s, transform 0.2s;
-}
-
-#backToTop:hover {
-    opacity: 1;
-    background-color: #ff4b4b;
-    transform: translateY(-0.1rem); /* subtle lift effect */
-}
-
-/* ——— STUDIES SECTION ——— */
-#studies {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem; /* consistent spacing using rem */
-}
-
-.study-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.study-item .logo {
-    height: 3.2rem; /* responsive logo size */
-    width: auto;
-    flex-shrink: 0;
-}
-
-.study-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    line-height: 1.4;
-}
-
-.study-text .title {
-    font-weight: bold;
-    margin-bottom: 0.2rem;
-    font-size: 1.2rem;
-}
-
-/* ——— WORK SECTION ——— */
-#work {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.work-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-}
-
-.work-item .work-logo {
-    height: 4rem;   /* slightly larger logo */
-    width: auto;
-    flex-shrink: 0;
-}
-
-.work-text {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    line-height: 1.45;
-}
-
+/* ---------- Work / Company Name / Timeline ---------- */
 .company-name {
-    font-size: 1.25rem;
-    font-weight: bold;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.01rem;
+  margin-bottom: 0.25rem;
 }
 
 .timeline {
-    font-style: italic;
-    color: #555;
-    margin-bottom: 0.4rem;
+  font-style: italic;
+  color: #555;
+  margin-bottom: 0.6rem;
 }
 
-.description {
-    margin: 0;
-}
+/* Work item layout */
+#work { display:flex; flex-direction:column; gap:1.25rem; }
+.work-item { display:flex; align-items:flex-start; gap:1rem; }
+.work-item .work-logo { height:4rem; width:auto; flex-shrink:0; }
+.work-text { display:flex; flex-direction:column; gap:0.3rem; }
 
-/* ——— RESPONSIVE ADJUSTMENTS ——— */
-@media (max-width: 768px) {
-    /* Stack Study items vertically on mobile if needed */
-    .study-item,
-    .work-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
-
-    .study-text .title,
-    .company-name {
-        font-size: 1.1rem;
-    }
-
-    .study-item .logo,
-    .work-item .work-logo {
-        height: 3rem;
-    }
-}
-
-/* ——— DIGITAL SKILLS SECTION ——— */
-#digital-skills {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-/* 3–4 column responsive grid */
+/* ---------- Skills grid ---------- */
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 2rem;
-    align-items: center;
-    justify-items: center;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap:1.25rem;
+  align-items:center;
+  justify-items:center;
 }
+.skill-item img { height:4rem; width:auto; }
+.skill-item p { font-size:1rem; margin:0; font-weight:500; }
 
-/* Individual skill item */
-.skill-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 0.6rem;
-}
+/* ---------- Projects ---------- */
+#projects { margin-top: 1.5rem; }
+.project-item { display:flex; justify-content:space-between; align-items:center; gap:20px; margin-bottom:30px; }
+.project-text { width:50%; }
+.project-name { font-size:1.25rem; font-weight:700; margin-bottom:6px; }
+.project-item .description { font-size:1rem; line-height:1.45; }
+.project-image { width:45%; display:flex; justify-content:center; }
+.project-image img { width:100%; height:auto; object-fit:cover; }
 
-/* Logo size */
-.skill-item img {
-    height: 4rem;       /* adjusts automatically on mobile */
-    width: auto;
-}
-
-/* Text under logo */
-.skill-item p {
-    font-size: 1.1rem;
-    margin: 0;
-    font-weight: 500;
-}
-
-/* Mobile adjustments */
-@media (max-width: 600px) {
-    .skill-item img {
-        height: 3.2rem;
-    }
-    .skill-item p {
-        font-size: 1rem;
-    }
-}
-
-#projects {
-    margin-top: 40px;
-}
-
-.project-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
-    gap: 30px;
-}
-
-.project-text {
-    width: 50%;
-}
-
-.project-name {
-    font-size: 1.3rem;   /* same font size as .company-name */
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.project-item .timeline {
-    font-size: 0.95rem;   /* same style as your timeline */
-    color: #666;
-    margin-bottom: 10px;
-}
-
-.project-item .description {
-    font-size: 1rem;
-    line-height: 1.4;
-}
-
-.project-image {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-}
-
-.project-image img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px; /* optional */
-}
-
-#sports {
-    margin-top: 40px;
-}
-
-.sport-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 30px;
-    margin-bottom: 40px;
-}
-
-.sport-text {
-    width: 50%;
-}
-
-.sport-category {
-    font-size: 1.3rem; /* same as titles in other sections */
-    margin-top: 10px;
-    margin-bottom: 5px;
-}
-
-.sport-list {
-    list-style-type: none;
-    padding-left: 0;
-    margin-bottom: 20px;
-}
-
+/* ---------- Sports (tab before year) ---------- */
+.sport-category { font-size:1.2rem; margin-top:10px; margin-bottom:6px; font-weight:600; }
+.sport-list { list-style:none; padding-left:0; margin-bottom:1rem; }
 .sport-list li {
-    margin-bottom: 6px;
-    font-size: 1rem;
+  margin-bottom:6px;
+  font-size:1rem;
+  padding-left:1.8rem;   /* tab before year */
+  text-indent:-1.8rem;
 }
 
-.sport-image {
-    width: 50%;
-    display: flex;
-    justify-content: center;
+/* ---------- Certificates (left-aligned title) ---------- */
+#certificates { width:100%; display:flex; flex-direction:column; align-items:flex-start; }
+.certificate-frame {
+  width:100%;
+  max-width:900px;
+  display:flex;
+  align-items:center;
+  position:relative;
+  margin-top:16px;
+  gap:12px;
 }
 
-.sport-image img {
-    width: 100%;
-    object-fit: cover;
-    border-radius: 8px;
+.certificate-slide {
+  background:white;
+  display:flex;
+  width:100%;
+  height:350px;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
 }
 
-#certificates {
-    height: auto;
-    pointer-events: auto !important;
+.cert-left { flex:1; min-width:0; } /* min-width:0 helps embed scale on narrow screens */
+.cert-left embed { width:100%; height:100%; border:0; display:block; }
+
+.cert-right { flex:1; padding:20px; overflow:auto; }
+.cert-title { font-weight:700; font-size:1.15rem; margin-bottom:8px; } /* company-name is applied via class */
+.cert-meta { color:#555; margin-bottom:12px; font-style:italic; }
+.cert-description { line-height:1.5; }
+
+/* Arrows for certificates */
+.arrow {
+  width:42px; height:42px;
+  background:#efefef;
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; font-size:22px; border:0;
+  box-shadow:0 6px 16px rgba(0,0,0,0.06);
+}
+.arrow:hover { background:#e0e0e0; }
+
+/* ---------- Contact (full width) ---------- */
+.contact-footer { color:white; background:#1c1c1c; padding:2.8rem 6%; }
+.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.contact-labels p { margin:0.4rem 0; font-size:1rem; }
+.contact-fields { display:flex; flex-direction:column; gap:0.6rem; }
+.contact-fields input, .contact-fields textarea { padding:0.7rem; background:#2b2b2b; color:white; border:none; }
+
+/* ---------- Back to top ---------- */
+#backToTop {
+  position:fixed; bottom:1.2rem; right:1.2rem;
+  width:48px; height:48px; background:#ff6b6b; color:white; border:none; font-size:18px; cursor:pointer; z-index:9999;
 }
 
-/* Make the carousel work */
-.carousel-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    pointer-events: auto;
+/* ---------- Responsive adjustments ---------- */
+@media (max-width: 900px) {
+  .hero-text h1 { font-size:2.4rem; }
+  .hero-text p { font-size:1.15rem; }
+
+  .work-item, .study-item { flex-direction:column; align-items:flex-start; gap:0.6rem; }
+
+  .project-item { flex-direction:column; gap:12px; }
+  .project-text, .project-image { width:100%; }
+
+  .certificate-frame { flex-direction:column; gap:12px; }
+  .certificate-slide { flex-direction:column; height:480px; }
+  .cert-left, .cert-right { width:100%; }
+  .cert-left embed { height:260px; } /* preview smaller on mobile */
+
+  .contact-grid { grid-template-columns:1fr; }
 }
 
-.carousel-track {
-    display: flex;
-    gap: 20px;
-    transition: transform 0.3s ease;
+/* For very small screens */
+@media (max-width: 420px) {
+  .button-bar .nav-button { font-size:0.95rem; padding:0.6rem 0; }
+  .cert-left embed { height:220px; }
 }
 
-.certificate-item {
-    min-width: 260px;
-    height: 350px;
-    background: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    pointer-events: auto;
-    cursor: pointer;
-}
-
-.certificate-item embed {
-    width: 100%;
-    height: 100%;
-}
