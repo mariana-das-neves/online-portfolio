@@ -297,9 +297,48 @@
 
 
     <section id="certificates">
-        <h2>Languages</h2>
-        <p>...</p>
+        <h2>Certificates</h2>
+
+        <div class="carousel-container">
+            <div class="arrow left-arrow" onclick="moveLeft()">❮</div>
+                <div class="arrow right-arrow" onclick="moveRight()">❯</div>
+
+                <div class="carousel-track" id="carouselTrack">
+
+                    <div class="certificate-item" onclick="zoom('cadvancedenglish.pdf')">
+                        <embed src="cadvancedenglish.pdf" type="application/pdf" />
+                    </div>
+
+                    <div class="certificate-item" onclick="zoom('latex.pdf')">
+                        <embed src="latex.pdf" type="application/pdf" />
+                    </div>
+
+                    <div class="certificate-item" onclick="zoom('educacao_financeira.pdf')">
+                        <embed src="educacao_financeira.pdf" type="application/pdf" />
+                    </div>
+
+                    <div class="certificate-item" onclick="zoom('financas_pessoais.pdf')">
+                        <embed src="financas_pessoais.pdf" type="application/pdf" />
+                    </div>
+
+                    <div class="certificate-item" onclick="zoom('personal_finance.pdf')">
+                        <embed src="personal_finance.pdf" type="application/pdf" />
+                    </div>
+
+                    <div class="certificate-item" onclick="zoom('componente_geral.pdf')">
+                        <embed src="componente_geral.pdf" type="application/pdf" />
+                    </div>
+
+                </div>
+        </div>
     </section>
+
+    <!-- Zoom Overlay -->
+    <div class="zoom-overlay" id="zoomOverlay" onclick="closeZoom()">
+        <div class="zoom-content" onclick="event.stopPropagation()">
+            <embed id="zoomEmbed" src="" type="application/pdf" />
+        </div>
+    </div>
 
     <section id="contacts" class="contact-footer">
         <h2>Contact Me</h2>
@@ -338,6 +377,39 @@
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         });
+    </script>
+
+    <script>
+        let track = document.getElementById('carouselTrack');
+        let position = 0;
+
+
+        function moveRight() {
+        if (position > -((track.children.length - 1) * 270)) {
+        position -= 270;
+        track.style.transform = `translateX(${position}px)`;
+        }
+        }
+
+
+        function moveLeft() {
+        if (position < 0) {
+        position += 270;
+        track.style.transform = `translateX(${position}px)`;
+        }
+        }
+
+
+        function zoom(pdf) {
+        document.getElementById('zoomOverlay').style.display = 'flex';
+        document.getElementById('zoomEmbed').src = pdf;
+        }
+
+
+        function closeZoom() {
+        document.getElementById('zoomOverlay').style.display = 'none';
+        document.getElementById('zoomEmbed').src = '';
+        }
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
