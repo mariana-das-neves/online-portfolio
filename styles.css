@@ -132,6 +132,12 @@ section h2 {
 .skill-item img { height:4rem; width:auto; }
 .skill-item p { font-size:1rem; margin:0; font-weight:500; }
 
+/* Volunteer */
+#volunteer { display:flex; flex-direction:column; gap:1.25rem; }
+.volunteer-item { display:flex; align-items:flex-start; gap:1rem; }
+.volunteer-item .volunteer-logo { height:4rem; width:auto; flex-shrink:0; }
+.volunteer-text { display:flex; flex-direction:column; gap:0.3rem; }
+
 /* ---------- Projects ---------- */
 #projects { margin-top: 1.5rem; }
 .project-item { display:flex; justify-content:space-between; align-items:center; gap:20px; margin-bottom:30px; }
@@ -148,7 +154,21 @@ section h2 {
   margin-bottom:6px;
   font-size:1rem;
   padding-left:1.8rem;   /* tab before year */
-  text-indent:-1.8rem;
+  text-indent:-1.8rem; }
+
+.sport-images { display: flex;
+  gap: 12px;           /* space between pictures */
+  margin-top: 10px;   /* space from sports list */
+  flex-wrap: wrap;    /* allows wrapping on small screens */
+}
+
+.sport-images img {
+  height: 150px;       /* relatively small */
+  width: auto;
+  object-fit: cover;
+  border-radius: 6px; /* optional: softer look */
+}
+
 }
 
 /* ---------- Certificates (left-aligned title) ---------- */
