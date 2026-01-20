@@ -169,8 +169,6 @@ section h2 {
   border-radius: 6px; /* optional: softer look */
 }
 
-}
-
 /* ---------- Certificates (left-aligned title) ---------- */
 #certificates { width:100%; display:flex; flex-direction:column; align-items:flex-start; }
 .certificate-frame {
